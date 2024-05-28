@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    var dataArray:Array<String> = []
+    var dataArray:Array<Product> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,12 +45,21 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func initData(){
         for i in 0...20 {
-            dataArray.append("第\(i)行")
+            let product = Product()
+            product.title = "第\(i)行"
+            product.price = "\(i * 10 + i)"
+            if i>10 {
+                product.image = "img_\(i%10)"
+            } else {
+                product.image = "img_\(i+1)"
+            }
+            product.desc = "这是内容说明\(i)"
+            dataArray.append(product)
         }
         
         let tableView = UITableView(frame: self.view.frame,style: .grouped)
         // 注册 cell
-        tableView.register(NSClassFromString("UITableViewCell"), forCellReuseIdentifier: "TableViewCellId")
+        tableView.register(ProductTableViewCell.self, forCellReuseIdentifier: "CustomCell")
         self.view.addSubview(tableView)
         // 设置数据源与代理
         tableView.delegate = self
@@ -63,11 +72,14 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 根据注册的cell类ID值获取载体cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCellId", for: indexPath)
-        // 设置标题
-        cell.textLabel?.text = dataArray[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! ProductTableViewCell
+        cell.updateState(product: dataArray[indexPath.row])
         return cell
     }
+    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 100
+//    }
     
 //    分区设置
 //    func numberOfSections(in tableView: UITableView) -> Int {
