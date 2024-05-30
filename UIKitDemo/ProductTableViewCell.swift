@@ -20,7 +20,7 @@ class ProductTableViewCell: UITableViewCell {
     let priceLabel : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
+        label.textColor = .red
         label.font = UIFont.preferredFont(forTextStyle: .subheadline)
         return label
     }()
@@ -30,13 +30,14 @@ class ProductTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
         label.font = UIFont.preferredFont(forTextStyle: .body)
+        label.numberOfLines = 0
         return label
     }()
     
     let image : UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleAspectFit
+        image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         return image
     }()
@@ -50,6 +51,7 @@ class ProductTableViewCell: UITableViewCell {
         
         // 设置约束
         titleLabel.snp.makeConstraints { make in
+            make.left.equalTo(image.snp.right).offset(10)
             make.top.equalTo(10)
             make.trailing.equalTo(-10)
         }
@@ -58,7 +60,8 @@ class ProductTableViewCell: UITableViewCell {
             make.top.equalTo(30)
             make.bottom.equalTo(-30)
             make.trailing.equalTo(-10)
-            make.left.equalTo(image.snp.right)
+//            make.leftMargin.equalTo(10)
+            make.left.equalTo(image.snp.right).offset(10)
         }
         
         priceLabel.snp.makeConstraints { make in
@@ -68,6 +71,7 @@ class ProductTableViewCell: UITableViewCell {
         image.snp.makeConstraints{ make in
             make.top.left.equalTo(10)
             make.bottom.equalTo(-10)
+            make.width.equalTo(120)
         }
         
     }

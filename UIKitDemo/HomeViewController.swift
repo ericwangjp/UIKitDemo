@@ -19,11 +19,14 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         initData()
         
-//        let button = UIButton(type: .system)
-//        button.frame = CGRect(x: 100, y: 100, width: 200, height: 50)
-//        button.setTitle("Go to Other Page", for: .normal)
-//        button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
-//        self.view.addSubview(button)
+        // 显示一个加载圈
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.center = self.view.center
+        self.view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+            activityIndicator.stopAnimating()
+        }
     }
     
 //    @objc func buttonClicked() {
@@ -49,15 +52,16 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             product.title = "第\(i)行"
             product.price = "\(i * 10 + i)"
             if i>10 {
-                product.image = "img_\(i%10)"
+                product.image = "img_\(i%11 + 1)"
             } else {
                 product.image = "img_\(i+1)"
             }
-            product.desc = "这是内容说明\(i)"
+            product.desc = "这是内容说明\(i)，看看换行效果。"
             dataArray.append(product)
         }
         
         let tableView = UITableView(frame: self.view.frame,style: .grouped)
+//        tableView.isEditing = true
         // 注册 cell
         tableView.register(ProductTableViewCell.self, forCellReuseIdentifier: "CustomCell")
         self.view.addSubview(tableView)
@@ -77,9 +81,9 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 100
-//    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
     
 //    分区设置
 //    func numberOfSections(in tableView: UITableView) -> Int {
@@ -97,15 +101,20 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
 //    设置头部自定义视图
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 120))
-        view.backgroundColor = UIColor.systemGray
-        return view
+        let images:[UIImage] = dataArray.map { UIImage(named: $0.image ?? "img_1")! }
+        let headerView = CarouselHeaderView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 200),images: images)
+        return headerView
     }
     
 //    设置尾部自定义视图
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 120))
-        view.backgroundColor = UIColor.systemGray
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 80))
+        view.backgroundColor = UIColor.systemGray6
+        let label = UILabel(frame: view.frame)
+        label.text = "我是有底线的~"
+        label.font = UIFont.preferredFont(forTextStyle: .footnote)
+        label.textAlignment = .center
+        view.addSubview(label)
         return view
     }
     
@@ -115,16 +124,25 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 120
+        return 80
     }
     
 //    已经选中某一行
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("选中：\(indexPath)")
+        let nextViewController = DetailViewController()
+        nextViewController.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(nextViewController, animated: true)
     }
     
 //    已经取消选中某一行
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         print("取消选中：\(indexPath)")
+    }
+    
+    
+    @objc func pageControlTapped(_ sender: UIPageControl){
+//        let rect = CGRect(x: CGFloat(sender.currentPage) * view.bounds.width, y: 0, width: view.bounds.width, height: view.bounds.height)
+//        scrollView.scrollRectToVisible(rect, animated: true)
     }
 }

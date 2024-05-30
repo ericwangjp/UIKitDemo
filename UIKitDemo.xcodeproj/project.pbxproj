@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF5DBABB2C05C43600F527F9 /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5DBABA2C05C43600F527F9 /* WaterfallLayout.swift */; };
+		AF5DBABD2C06CCE600F527F9 /* CarouselHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5DBABC2C06CCE600F527F9 /* CarouselHeaderView.swift */; };
+		AF5DBABF2C06DEC600F527F9 /* CustomCollectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5DBABE2C06DEC600F527F9 /* CustomCollectionFooterView.swift */; };
+		AF5DBAC12C07449B00F527F9 /* MineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5DBAC02C07449B00F527F9 /* MineTableViewCell.swift */; };
+		AF5DBAC32C074A8E00F527F9 /* MineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5DBAC22C074A8E00F527F9 /* MineItem.swift */; };
+		AF5DBAC52C084CDA00F527F9 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5DBAC42C084CDA00F527F9 /* WebViewController.swift */; };
 		AFD675BF2C008536008E9C16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD675BE2C008536008E9C16 /* AppDelegate.swift */; };
 		AFD675C12C008536008E9C16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD675C02C008536008E9C16 /* SceneDelegate.swift */; };
 		AFD675C32C008536008E9C16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD675C22C008536008E9C16 /* ViewController.swift */; };
@@ -27,6 +33,12 @@
 		04E498C08A0424D9F7B70D54 /* Pods_UIKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3413FB170E621ADCFAF48EA1 /* Pods-UIKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKitDemo.release.xcconfig"; path = "Target Support Files/Pods-UIKitDemo/Pods-UIKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		57F6C1CE08D4FDAF90D663DB /* Pods-UIKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKitDemo.debug.xcconfig"; path = "Target Support Files/Pods-UIKitDemo/Pods-UIKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		AF5DBABA2C05C43600F527F9 /* WaterfallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallLayout.swift; sourceTree = "<group>"; };
+		AF5DBABC2C06CCE600F527F9 /* CarouselHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselHeaderView.swift; sourceTree = "<group>"; };
+		AF5DBABE2C06DEC600F527F9 /* CustomCollectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionFooterView.swift; sourceTree = "<group>"; };
+		AF5DBAC02C07449B00F527F9 /* MineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineTableViewCell.swift; sourceTree = "<group>"; };
+		AF5DBAC22C074A8E00F527F9 /* MineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineItem.swift; sourceTree = "<group>"; };
+		AF5DBAC42C084CDA00F527F9 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		AFD675BB2C008536008E9C16 /* UIKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFD675BE2C008536008E9C16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFD675C02C008536008E9C16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,8 +103,11 @@
 				AFD675C22C008536008E9C16 /* ViewController.swift */,
 				AFD675DA2C0087D1008E9C16 /* HomeTabBarController.swift */,
 				AFD675D42C008601008E9C16 /* HomeViewController.swift */,
+				AF5DBABC2C06CCE600F527F9 /* CarouselHeaderView.swift */,
 				AFD675D62C0086DD008E9C16 /* DiscoverViewController.swift */,
+				AF5DBABE2C06DEC600F527F9 /* CustomCollectionFooterView.swift */,
 				AFD675DC2C008F0B008E9C16 /* MineViewController.swift */,
+				AF5DBAC42C084CDA00F527F9 /* WebViewController.swift */,
 				AFD675D82C00871E008E9C16 /* DetailViewController.swift */,
 				AFD675C42C008536008E9C16 /* Main.storyboard */,
 				AFD675C92C008538008E9C16 /* LaunchScreen.storyboard */,
@@ -100,6 +115,8 @@
 				AFD675C72C008538008E9C16 /* Assets.xcassets */,
 				AFD675CC2C008538008E9C16 /* Info.plist */,
 				AFD675E12C043BEB008E9C16 /* ProductTableViewCell.swift */,
+				AF5DBABA2C05C43600F527F9 /* WaterfallLayout.swift */,
+				AF5DBAC02C07449B00F527F9 /* MineTableViewCell.swift */,
 			);
 			path = UIKitDemo;
 			sourceTree = "<group>";
@@ -108,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				AFD675DF2C043989008E9C16 /* Product.swift */,
+				AF5DBAC22C074A8E00F527F9 /* MineItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -235,16 +253,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF5DBAC12C07449B00F527F9 /* MineTableViewCell.swift in Sources */,
+				AF5DBABF2C06DEC600F527F9 /* CustomCollectionFooterView.swift in Sources */,
 				AFD675C32C008536008E9C16 /* ViewController.swift in Sources */,
 				AFD675BF2C008536008E9C16 /* AppDelegate.swift in Sources */,
+				AF5DBABB2C05C43600F527F9 /* WaterfallLayout.swift in Sources */,
 				AFD675E02C043989008E9C16 /* Product.swift in Sources */,
+				AF5DBAC32C074A8E00F527F9 /* MineItem.swift in Sources */,
 				AFD675DB2C0087D1008E9C16 /* HomeTabBarController.swift in Sources */,
 				AFD675DD2C008F0B008E9C16 /* MineViewController.swift in Sources */,
 				AFD675C12C008536008E9C16 /* SceneDelegate.swift in Sources */,
 				AFD675D92C00871E008E9C16 /* DetailViewController.swift in Sources */,
 				AFD675E22C043BEB008E9C16 /* ProductTableViewCell.swift in Sources */,
+				AF5DBABD2C06CCE600F527F9 /* CarouselHeaderView.swift in Sources */,
 				AFD675D52C008601008E9C16 /* HomeViewController.swift in Sources */,
 				AFD675D72C0086DD008E9C16 /* DiscoverViewController.swift in Sources */,
+				AF5DBAC52C084CDA00F527F9 /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
